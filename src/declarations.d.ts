@@ -6,14 +6,14 @@ declare module 'acm' {
 }
 
 declare module 'twilio/lib/TwimlResponse' {
-    type NODE_NAME = 'Dial' | 'Enqueue' | 'Gather' | 'Message' | 'Response';
-
-    type LEGAL_NODE = 'Body' | 'Client' | 'Conference' | 'Dial' | 'Enqueue' |
-        'Gather' | 'Hangup' | 'Leave' | 'Media' | 'Message' | 'Number' |
-        'Pause' | 'Pause' | 'Play' | 'Queue' | 'Record' | 'Redirect' |
-        'Reject' | 'Say' | 'Sip' | 'Sms' | 'Task';
-
     namespace response {
+        type NODE_NAME = 'Dial' | 'Enqueue' | 'Gather' | 'Message' | 'Response';
+
+        type LEGAL_NODE = 'Body' | 'Client' | 'Conference' | 'Dial' | 'Enqueue' |
+            'Gather' | 'Hangup' | 'Leave' | 'Media' | 'Message' | 'Number' |
+            'Pause' | 'Pause' | 'Play' | 'Queue' | 'Record' | 'Redirect' |
+            'Reject' | 'Say' | 'Sip' | 'Sms' | 'Task';
+
         export class Node {
             topLevel: boolean;
             name: NODE_NAME;
