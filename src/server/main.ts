@@ -5,6 +5,9 @@ import { setDefaults as swig_config, renderFile as render } from 'swig';
 import * as config from 'acm';
 import * as dotenv from 'dotenv';
 import * as favicon from 'serve-favicon';
+import * as body from 'body-parser';
+
+import { router as router_sms } from './sms';
 
 const app = express();
 
@@ -24,6 +27,10 @@ app.use('/assets', serve('assets'));
 app.use('/dist', serve('dist'));
 app.use('/node_modules', serve('node_modules'));
 app.use(favicon('./assets/images/favicon.ico'));
+app.use(body.json());
+app.use(body.urlencoded({ extended: true }));
+
+app.use('/sms', router_sms);
 
 app.get('/', (_req, res) =>
     res.render('index', {}));
