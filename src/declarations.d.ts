@@ -13,16 +13,17 @@ declare module 'twilio/lib/TwimlResponse' {
         'Pause' | 'Pause' | 'Play' | 'Queue' | 'Record' | 'Redirect' |
         'Reject' | 'Say' | 'Sip' | 'Sms' | 'Task';
 
-    class Node {
-        topLevel: boolean;
-        name: NODE_NAME;
-        legalNodes: LEGAL_NODE[];
-        children: Node[];
-        text: string;
+    namespace response {
+        export class Node {
+            topLevel: boolean;
+            name: NODE_NAME;
+            legalNodes: LEGAL_NODE[];
+            children: Node[];
+            text: string;
+        }
     }
 
-    namespace response {}
-    function response(): Node;
+    function response(): response.Node;
 
     export = response;
 }

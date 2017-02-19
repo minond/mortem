@@ -29,7 +29,7 @@ endif
 
 build-server:
 	$(tsc) $(dir_src)/declarations.d.ts $(dir_src)/server/main.ts \
-		--outDir $(dir_dist)/server \
+		--outDir $(dir_dist) \
 		--module commonjs \
 		--removeComments \
 		--noUnusedParameters \
