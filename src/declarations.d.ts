@@ -1,3 +1,10 @@
+/* import * as Bluebird from 'Bluebird'; */
+/* declare function Promise<T> = Bluebird<T>; */
+/* declare interface Promise<R> extends Bluebird<R> { */
+    /* constructor(callback: (resolve : (result: R) => void, reject: (error: any) => void) => void);  */
+        /* ///... */
+/* } */
+
 declare module 'acm' {
     namespace config {}
     function config<T>(str: string): T;
