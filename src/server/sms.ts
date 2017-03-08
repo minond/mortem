@@ -1,9 +1,9 @@
-import { Router, Request, Response } from 'express';
+import { router } from 'solum/dist/application';
 import { response, message } from '../sms/response';
 
-export const router = Router();
+export const route = router();
 
-router.post('/log', (req: Request, res: Response): void => {
+route.post('/log', (req, res) => {
     let reply = response(message('hihihi'));
 
     console.log(req.body);

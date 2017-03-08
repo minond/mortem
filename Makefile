@@ -28,15 +28,19 @@ else
 endif
 
 build-server:
-	$(tsc) $(dir_src)/declarations.d.ts $(dir_src)/server/main.ts \
+	$(tsc) \
 		--outDir $(dir_dist) \
 		--module commonjs \
 		--removeComments \
-		--noUnusedParameters \
 		--noUnusedLocals \
 		--moduleResolution node \
 		--noImplicitAny \
-		--pretty
+		--noImplicitReturns \
+		--noImplicitThis \
+		--pretty \
+		node_modules/solum/src/declarations.d.ts \
+		$(dir_src)/declarations.d.ts \
+		$(dir_src)/server/main.ts
 
 clean:
 	-rm -r $(dir_dist)
